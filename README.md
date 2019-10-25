@@ -51,7 +51,7 @@ This code is implemented with Python 3.6 with the following packages installed:
 ### Icebreaker Experiment
 #### UCI Imputation
 In this example, we use the Boston house dataset. (https://archive.ics.uci.edu/ml/machine-learning-databases/housing/)
-Preparing the data: we store the data under Dataloader/data/uci/d0.xls as default and we require the variable names to be put in the first row of the .xls file.
+Preparing the data: we store the data under Icebreaker/Dataloader/data/uci/d0.xls as default and we require the variable names to be put in the first row of the .xls file.
 To run the UCI imputation experiment, there are several hyperparameters that need to be set. For example, `python Icebreaker/Debug_Retrain_Active_SGHMC_UCI_Imputation.py --epochs 2000 --uci '0' --uci_normal
     'True_Normal' --seed 130 --step_sghmc 0.0003 --sigma 0.4 --BALD_Coef 1.0 --Conditional_coef
     1.0 --scale_data 1.0 --noisy_update 1.0`.
