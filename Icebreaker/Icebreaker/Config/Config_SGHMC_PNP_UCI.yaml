@@ -1,0 +1,74 @@
+# Config files for active learning
+Global_Settings:
+  
+Dataset_Settings:
+  test_size: 0.1
+  missing_prop: 0.2
+
+Training_Settings:
+  flag_dataloader: True
+  batch_size: 100 # Maybe too large for beginning ?
+  z_sigma_prior: 1.
+  W_sigma_prior: 1.
+  Drop_p: 0.2
+  flag_reset_optim: True
+
+Optimizer:
+    beta1: 0.9
+    beta2: 0.99
+    weight_decay: 0.
+
+BNN_Settings:
+  latent_dim: 10
+  dim_before_agg: 20 #20
+  embedding_dim: 10 #20
+  KL_coef: 1.
+  flag_log_q: True
+  encoder_settings:
+
+    encoder_layer_num_before_agg: 1
+    encoder_hidden_before_agg: [20] #[50] #[30]
+    encoder_layer_num_after_agg: 1 #1
+
+    encoder_hidden_after_agg: [100] #[500,200] #[50,40] #[500,200] #[100] #[40]
+    pooling: 'Sum'
+    sample_z: 5
+    pooling_act: 'ReLU'
+
+  decoder_settings:
+    decoder_layer_num: 2
+    decoder_hidden: [100,40] #[100,40] #[50,100] # [30,40]
+    output_const: 1.
+    add_const: 0.
+    sample_W: 5
+    init_range: 0.0001
+    # If want to run PNP without BNN, run with coef_sample: 0, KL_Schedule: 0 and flag_BNN: False, thus the decoder will only use the mean as the output weight and disable the KL penalty for W.
+    coef_sample: 0.
+
+Active_Learning_Settings:
+  step: 50
+  max_selection: 4000
+  flag_clear_target_train: False
+  flag_clear_target_test: False
+  flag_hybrid: False # This is to enable the hybrid objective function (including conditional model)
+  balance_coef: 0.5 # This is to balance the new user and old user proportion
+
+AL_Eval_Settings:
+
+Pretrain_Settings:
+  flag_pretrain: True
+  pretrain_number: 0.02 # This is the prop of num of rows, not data points
+
+KL_Schedule_Settings:
+  # This is not enabled in experiment as flag_BNN is False
+  # 0: const coef 1: Linear up 2: exponential decay
+  schedule: '1'
+  epoch_target: 150
+  coef: 0.01 #0.05#0.01 #0.005 #1 #
+
+KL_Schedule_Pretrain_Settings:
+  # This is not enabled in experiment as flag_BNN is False
+  # 0: const coef 1: Linear up 2: exponential decay
+  schedule: '1'
+  epoch_target: 1000
+  coef: 0.01 #1
