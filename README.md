@@ -70,7 +70,7 @@ Each hyperparemeter has following meaning:
 * `scale_data`: Replication of the training data set, set to 1.
 * `noisy_update`: The SGHMC burn-in method. '1' represents injecting noise at each step during burn-in. '0': no noise injecting, equivalent to running an optimization method. 
 #### UCI Prediction
-To run UCI active prediction, `python Debug_Retrain_Active_SGHMC_Opposite.py --epochs 1500 --seed 50 --uci '0'
+To run UCI active prediction, `python Debug_Retrain_Active_SGHMC_Prediction.py --epochs 1500 --seed 50 --uci '0'
     --uci_normal 'True_Normal' --step_sghmc 0.0003 --sigma 0.4 --BALD_Coef 0.5 --Conditional_coef
     0.8 --scale_data 1.0 --noisy_update 0.0`
     
