@@ -5,6 +5,7 @@ cwd_parent=os.path.abspath('..')
 sys.path.append(cwd)
 sys.path.append(cwd_parent)
 sys.path.append(cwd_parent+'/Util')
+sys.path.append(cwd_parent+'/Icebreaker') #for data loader
 import torch
 from PA_BELGAM.PA_BELGAM_Dataloader import *
 from PA_BELGAM.PA_BELGAM_model import *
