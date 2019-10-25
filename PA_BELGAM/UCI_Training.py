@@ -3,6 +3,7 @@ import os
 cwd=os.getcwd()
 cwd_parent=os.path.abspath('..')
 sys.path.append(cwd)
+sys.path.append(cwd_parent)
 sys.path.append(cwd_parent+'/Util')
 import torch
 from PA_BELGAM.PA_BELGAM_Dataloader import *
