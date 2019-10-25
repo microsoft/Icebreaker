@@ -219,7 +219,7 @@ for runs in range(num_runs):
                                          decoder_layer_num=decoder_layer_num, decoder_hidden=decoder_hidden, \
                                          pooling=pooling, output_const=output_const, add_const=add_const,
                                          sample_z=sample_z, sample_W=sample_W, W_sigma_prior=W_sigma_prior,
-                                         pooling_act=pooling_act, flag_log_q=flag_log_q,flag_LV=flag_LV)
+                                         pooling_act=pooling_act, flag_log_q=flag_log_q)
     PNP_SGHMC_RAND = Point_Net_Plus_BNN_SGHMC(latent_dim=latent_dim, obs_dim=obs_dim, dim_before_agg=dim_before_agg,
                                          encoder_layer_num_before_agg=encoder_layer_num_before_agg,
                                          encoder_hidden_before_agg=encoder_hidden_before_agg, \
@@ -228,7 +228,7 @@ for runs in range(num_runs):
                                          decoder_layer_num=decoder_layer_num, decoder_hidden=decoder_hidden, \
                                          pooling=pooling, output_const=output_const, add_const=add_const,
                                          sample_z=sample_z, sample_W=sample_W, W_sigma_prior=W_sigma_prior,
-                                         pooling_act=pooling_act, flag_log_q=flag_log_q,flag_LV=flag_LV)
+                                         pooling_act=pooling_act, flag_log_q=flag_log_q)
 
     PNP_Det = Point_Net_Plus_BNN(latent_dim=latent_dim, obs_dim=obs_dim, dim_before_agg=dim_before_agg,
                                  encoder_layer_num_before_agg=encoder_layer_num_before_agg,
@@ -239,7 +239,7 @@ for runs in range(num_runs):
                                  pooling=pooling, output_const=output_const, add_const=add_const, sample_z=sample_z,
                                  sample_W=sample_W_PNP, W_sigma_prior=W_sigma_prior, pooling_act=pooling_act,
                                  BNN_init_range=BNN_init_range, BNN_coef_sample=0.,
-                                 KL_coef=KL_coef, flag_local=True, couple_decoder_encoder=False, flag_log_q=flag_log_q,flag_LV=flag_LV
+                                 KL_coef=KL_coef, flag_local=True, flag_log_q=flag_log_q
                                  )
     #Infer Model
 
@@ -671,7 +671,7 @@ for runs in range(num_runs):
                                              decoder_layer_num=decoder_layer_num, decoder_hidden=decoder_hidden, \
                                              pooling=pooling, output_const=output_const, add_const=add_const,
                                              sample_z=sample_z, sample_W=sample_W, W_sigma_prior=W_sigma_prior,
-                                             pooling_act=pooling_act, flag_log_q=flag_log_q,flag_LV=flag_LV)
+                                             pooling_act=pooling_act, flag_log_q=flag_log_q)
         PNP_SGHMC_RAND = Point_Net_Plus_BNN_SGHMC(latent_dim=latent_dim, obs_dim=obs_dim, dim_before_agg=dim_before_agg,
                                                   encoder_layer_num_before_agg=encoder_layer_num_before_agg,
                                                   encoder_hidden_before_agg=encoder_hidden_before_agg, \
@@ -681,7 +681,7 @@ for runs in range(num_runs):
                                                   decoder_layer_num=decoder_layer_num, decoder_hidden=decoder_hidden, \
                                                   pooling=pooling, output_const=output_const, add_const=add_const,
                                                   sample_z=sample_z, sample_W=sample_W, W_sigma_prior=W_sigma_prior,
-                                                  pooling_act=pooling_act, flag_log_q=flag_log_q,flag_LV=flag_LV)
+                                                  pooling_act=pooling_act, flag_log_q=flag_log_q)
 
         PNP_Det = Point_Net_Plus_BNN(latent_dim=latent_dim, obs_dim=obs_dim, dim_before_agg=dim_before_agg,
                                      encoder_layer_num_before_agg=encoder_layer_num_before_agg,
@@ -692,7 +692,7 @@ for runs in range(num_runs):
                                      pooling=pooling, output_const=output_const, add_const=add_const, sample_z=sample_z,
                                      sample_W=sample_W_PNP, W_sigma_prior=W_sigma_prior, pooling_act=pooling_act,
                                      BNN_init_range=BNN_init_range, BNN_coef_sample=0.,
-                                     KL_coef=KL_coef, flag_local=True, couple_decoder_encoder=False, flag_log_q=flag_log_q,flag_LV=flag_LV
+                                     KL_coef=KL_coef, flag_local=True, flag_log_q=flag_log_q
                                      )
         # Infer Model
         Infer_SGHMC = SGHMC(model=PNP_SGHMC, Infer_name='Scale Adapted SGHMC')
